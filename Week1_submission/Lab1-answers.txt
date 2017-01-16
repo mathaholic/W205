@@ -1,0 +1,20 @@
+Q1: What is the difference between EBS and S3?
+
+EBS means that the root device for an instance launched from the AMI is an Amazon EBS volume created from an Amazon EBS snapshot.  S3 means that the root device for an instance launced from the AMI is an instance store volume created from a template stored in Amazon S3.
+
+Q2: When would you consider a cloud infrastructure for your data science tasks?
+
+Depending on needs of CPU, memory, storage, and networking capacity, often data science with heavy usage of these features will max out personal usage and using a cloud infracstructure is more stable, expandable, and can fit different cases.  As the needs for this features increase, the higher probability you should consider using a cloud infrastructure for your data science needs.  
+
+Q3: What is the difference between spot instances and reserved instances?
+
+Spot instances are spare unused AWS EC2 instances you can bid for.  If you r bid exceeds the current spot price (which flutuctuates in real time based on demand) the instance is launched.  The instances goes away when the spot price is greated than the bid price.  This is cost effective but you are not guaranteed and can be interrupted anytime.  Reserved instances are yours for a certain set price and won't be interrupted.  They provide a capacity reservation.
+
+Q4: List the names of four software packages installed on the UCB AMI
+
+Python
+Hadoop
+Apache Spark
+SQLite
+Postgres-XL Deployment Tools
+Anaconda
