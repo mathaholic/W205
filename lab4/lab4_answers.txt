@@ -1,0 +1,59 @@
+In Step 3:
+
+SUBMISSION 1:
+
+Create an RDD with tuples were the there is a key and a value. But in contrast to the example above the key is removed from the value portion of the key-value tuple. Submit the code and a print out of the first tuple.
+
+>>> narcoticsCrimeTuples2 = narcoticsCrimes.map(lambda x:(x.split(',')[0],(','.join(x.split(',')[1:])))) >>> narcoticsCrimeTuples2.count()
+663712
+>>> narcoticsCrimeTuples2.first()
+(u'10184515', u'HY372204,08/06/2015 11:55:00 PM,033XX W DIVERSEY AVE,2027,NARCOTICS,POSS: CRACK,STREET,true,false,1412,014,35,22,18,1153440,1918377,2015,08/13/2015 12:57:42 PM,41.931870591,-87.711546895,"(41.931870591, -87.711546895)"')
+>>> firstTuple2 = narcoticsCrimeTuples2.first()
+>>> len(firstTuple2)
+2
+>>> firstTuple2[0]
+u'10184515'
+>>> firstTuple2[1]
+u'HY372204,08/06/2015 11:55:00 PM,033XX W DIVERSEY AVE,2027,NARCOTICS,POSS: CRACK,STREET,true,false,1412,014,35,22,18,1153440,1918377,2015,08/13/2015 12:57:42 PM,41.931870591,-87.711546895,"(41.931870591, -87.711546895)"'
+
+
+In Step 5:
+
+SUBMISSION 2: Submit the the code for executing the above query as a Spark SQL python call. Also submit the number of rows in the result
+
+>>> more_results = sqlContext.sql("select * from Web_Session_Log where REFERERURL='http://www.ebay.com'")
+>>> more_results.show()
++-------------------+--------------------+--------------------+------------------+-------------------+
+|           DATETIME|              USERID|           SESSIONID|         PRODUCTID|         REFERERURL|
++-------------------+--------------------+--------------------+------------------+-------------------+
+|2005-12-08 02:36:30|__RequestVerifica...|;+.ASPXAUTH=H7HTS...|/product/MVI9HHP8A|http://www.ebay.com|
+|2013-05-03 06:15:05|__RequestVerifica...|;+.ASPXAUTH=N41PO...|/product/6DVRETE0C|http://www.ebay.com|
+|2015-03-07 09:28:10|__RequestVerifica...|;+.ASPXAUTH=K1SNT...|/product/GD3SDW1TA|http://www.ebay.com|
+|2005-08-10 23:11:45|__RequestVerifica...|;+.ASPXAUTH=4681Q...|/product/YGXQ90Z1Y|http://www.ebay.com|
+|2012-08-12 07:23:58|__RequestVerifica...|;+.ASPXAUTH=LREO8...| /search/M6YZ29JA5|http://www.ebay.com|
+|2015-09-16 16:41:46|__RequestVerifica...|;+.ASPXAUTH=ODD79...|/product/1TPEZJXPV|http://www.ebay.com|
+|2010-10-30 18:42:10|__RequestVerifica...|;+.ASPXAUTH=O2FW5...| /search/IJTXBGB7L|http://www.ebay.com|
+|2004-09-14 17:25:27|__RequestVerifica...|;+.ASPXAUTH=9IAO3...| /search/SOOG2281O|http://www.ebay.com|
+|2013-09-15 13:03:49|__RequestVerifica...|;+.ASPXAUTH=SCQTL...|/product/LRPBZBPTB|http://www.ebay.com|
+|2015-09-07 04:37:01|__RequestVerifica...|;+.ASPXAUTH=6V1R8...| /search/HEC6W17O6|http://www.ebay.com|
+|2008-04-27 10:38:21|__RequestVerifica...|;+.ASPXAUTH=2SKLF...|/product/65LML6QD4|http://www.ebay.com|
+|2013-03-12 21:31:57|__RequestVerifica...|;+.ASPXAUTH=S52F2...| /search/R3B39NL5X|http://www.ebay.com|
+|2006-10-27 11:36:10|__RequestVerifica...|;+.ASPXAUTH=JT2WU...| /search/R8CHKYRTL|http://www.ebay.com|
+|2004-03-24 04:11:09|__RequestVerifica...|;+.ASPXAUTH=K5LMJ...| /search/4LZ2P08VK|http://www.ebay.com|
+|2000-04-09 21:01:33|__RequestVerifica...|;+.ASPXAUTH=R0564...| /search/QCMR8KVG8|http://www.ebay.com|
+|2011-05-07 10:39:45|__RequestVerifica...|;+.ASPXAUTH=JTZ2U...|/product/9XK17QY8Q|http://www.ebay.com|
+|2008-09-28 06:05:00|__RequestVerifica...|;+.ASPXAUTH=IWP7W...|/product/RYZQN2G7W|http://www.ebay.com|
+|2006-02-13 07:23:11|__RequestVerifica...|;+.ASPXAUTH=DTQYA...|/product/DX5IFVYD7|http://www.ebay.com|
+|2015-02-19 07:21:48|__RequestVerifica...|;+.ASPXAUTH=NBEM1...| /search/B2C9DFGVJ|http://www.ebay.com|
+|2006-03-26 00:46:58|__RequestVerifica...|;+.ASPXAUTH=ER3BD...| /search/W67BZ6OE8|http://www.ebay.com|
++-------------------+--------------------+--------------------+------------------+-------------------+
+only showing top 20 rows
+
+>>> more_results = sqlContext.sql("select count(*) from Web_Session_Log where REFERERURL='http://www.ebay.com'")
+>>> more_results.show()
++----+
+| _c0|
++----+
+|3943|
++----+
+
