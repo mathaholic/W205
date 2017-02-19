@@ -1,0 +1,24 @@
+drop table hospitals;
+
+create external table hospitals
+(
+providerid string,
+hospitalname string,
+address string,
+city string,
+hospstate string,
+zipcode string,
+county string,
+phonenum string,
+hosptype string,
+ownership string,
+emergency string
+)
+
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES (
+"separatorChar" = ",",
+"quoteChar" = '"',
+Exe
+STORED AS TEXTFILE
+LOCATION /data/w205/hospital_compare;
