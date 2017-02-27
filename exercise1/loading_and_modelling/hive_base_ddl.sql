@@ -162,3 +162,33 @@ STORED AS TEXTFILE
 LOCATION '/user/w205/hospital_compare/surveys';
 
 
+drop table hospvalue;
+
+create external table hospvalue
+(
+providerid string,
+hospname string,
+address string,
+city string,
+hospstate string,
+zipcode string,
+county string,
+unwt_proc_score string,
+wt_proc_score string,
+unwt_pat_score string,
+wt_pat_score string,
+unwt_out_score string,
+wt_out_score string,
+unwt_eff_score string,
+wt_eff_score string,
+performance_score string
+)
+
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES (
+"separatorChar" = ",",
+"quoteChar" = '"',
+"escapeChar" = '\\'
+)
+STORED AS TEXTFILE
+LOCATION '/user/w205/hospital_compare/value';

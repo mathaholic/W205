@@ -1,0 +1,12 @@
+To determine which state had the best care, I used the same measurement score that I used in the first question: effective care score.  By averaging the scores across all hospitals within a state, I found the following:
+DC      101.0719696969697
+MD      100.40634441087613
+DE      100.02164502164503
+NY      96.82513661202186
+NJ      96.40204918032786
+NV      95.9890909090909
+NH      95.55102040816327
+VI      95.45833333333333
+CA      95.28648596508151
+CT      95.12188099808061
+

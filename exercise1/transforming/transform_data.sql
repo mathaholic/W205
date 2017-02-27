@@ -16,3 +16,23 @@ from hospitals
 join care on cast(care.providerid as int) = cast(hospitals.providerid as int)
 
 ;
+
+
+drop table care_surveys;
+
+create table care_surveys as
+select
+care.hospname as hospname,
+care.hospstate as hospstate,
+care.condition as condition,
+cast(care.score as float) as score,
+cast(surveys.hcahps_base as float) as hcahps_base,
+cast(surveys.hcahps_consist as float) as hcahps_consist
+from care
+join surveys on surveys.hospname = care.hospname
+
+;
+
+
+
+

@@ -1,0 +1,13 @@
+What hospitals are models of high-quality care?  Which hospitals have the most consistent high scores for a variety of procedures?  To examine which hospital had the best care, I combined the hospital table and the effective care table.  The score in the effective care table gives a score to the hospital for the quality of care they provide.  In order to see which had the best scores across all procedures, I took all the scores and averaged them for each hospital.  This gives me a score assessing the care for all the entries each hospital has.  The results are shown below:
+450348  FALLS COMMUNITY HOSPITAL AND CLINIC     235.58333333333334
+51335   BEAR VALLEY COMMUNITY HOSPITAL  175.33333333333334
+400079  HOSP COMUNITARIO BUEN SAMARITANO        167.25
+451330  MEDINA REGIONAL HOSPITAL        136.0
+310002  NEWARK BETH ISRAEL MEDICAL CENTER       134.81578947368422
+51318   REDWOOD MEMORIAL HOSPITAL       130.33333333333334
+400032  HOSPITAL HERMANOS MELENDEZ INC  130.21052631578948
+261317  MERCY HOSPITAL CASSVILLE        128.0
+331316  COMMUNITY MEMORIAL HOSPITAL, INC        127.66666666666667
+511313  BOONE MEMORIAL HOSPITAL 125.33333333333333
+
+For further exploration, I took a look 
