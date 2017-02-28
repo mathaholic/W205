@@ -1,0 +1,16 @@
+To determine the variability of the procedures by hospital, I went and took the standard deviation of the care scores provided in the effective care table.  The bigger the standard deviation of the car across the different hospitals, the more variable that procedure is.  The results were as follows:
+
+ED_1b   ED1     92.83178787038688       4656
+ED_2b   ED2     62.1666505939829        4656
+OP_18b  OP 18   40.70077322337158       4111
+OP_3b   Median Time to Transfer to Another Facility for Acute Coronary Intervention     29.4793266010505274111
+STK_4   Thrombolytic Therapy    21.954194561164023      4656
+OP_23   Head CT results 21.844653491103774      4111
+AMI_7a  Fibrinolytic Therapy Received Within 30 Minutes Of Hospital Arrival     18.7794213613377        4785
+OP_2    Fibrinolytic Therapy Received Within 30 Minutes of ED Arrival   18.048443797995763      4111
+OP_21   Median time to pain med 17.722358013930915      4111
+OP_20   Door to diagnostic eval 16.882052975576602      4111
+
+
+Though measures should have decent number of data points, I wanted to ensure that the high variance in some points weren't a result of random data points in a small data set.  You can see in the printout that each procedure had a decent number of points to assess variability of the procedures.
+

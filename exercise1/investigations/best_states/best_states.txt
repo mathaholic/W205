@@ -1,12 +1,31 @@
-To determine which state had the best care, I used the same measurement score that I used in the first question: effective care score.  By averaging the scores across all hospitals within a state, I found the following:
-DC      101.0719696969697
-MD      100.40634441087613
-DE      100.02164502164503
-NY      96.82513661202186
-NJ      96.40204918032786
-NV      95.9890909090909
-NH      95.55102040816327
-VI      95.45833333333333
-CA      95.28648596508151
-CT      95.12188099808061
+Which state has the best care?
 
+To determine which state had the best care, I used the same measurement score that I used in the first question: effective care score.  By averaging the scores across all hospitals within a state, I found the following:
+DC      101.0719696969697       264
+MD      100.40634441087613      1324
+DE      100.02164502164503      231
+NY      96.82513661202186       5490
+NJ      96.40204918032786       2440
+NV      95.9890909090909        825
+NH      95.55102040816327       637
+VI      95.45833333333333       48
+CA      95.28648596508151       10367
+CT      95.12188099808061       1042
+
+Because I am grouping by the state, I'm not too concerned that there are two few procedures per state, so I believe this is a safe and accurate representation of the states with consistent high quality care.
+
+Once again, for curiosity's sake, I ran this using the Medicare value score to find their assessment of the best states:
+
+
+HI      54.95863177226827
+SD      54.891549953314595
+AK      52.590891053391125
+MN      51.17268518518523
+VT      49.238047138047
+ME      49.14488536155201
+MT      49.027916065416086
+WI      47.86498390498394
+KS      47.666230559563914
+ID      47.09873459873461
+
+Once again and not surprisingly, the lists are completely different.  For an assessment based purely on the effectiveness of care, I would go with the states found in my first analysis using the effective care score number.

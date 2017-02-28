@@ -1,4 +1,7 @@
-What hospitals are models of high-quality care?  Which hospitals have the most consistent high scores for a variety of procedures?  To examine which hospital had the best care, I combined the hospital table and the effective care table.  The score in the effective care table gives a score to the hospital for the quality of care they provide.  In order to see which had the best scores across all procedures, I took all the scores and averaged them for each hospital.  This gives me a score assessing the care for all the entries each hospital has.  The results are shown below:
+What hospitals are models of high-quality care?  Which hospitals have the most consistent high scores for a variety of procedures?  
+
+To examine which hospital had the best care, I combined the hospital table and the effective care table.  The score in the effective care table gives a score to the hospital for the quality of care they provide.  In order to see which had the best scores across all procedures, I took all the scores and averaged them for each hospital.  This gives me a score assessing the care for all the entries each hospital has.  The results are shown below:
+
 450348  FALLS COMMUNITY HOSPITAL AND CLINIC     235.58333333333334
 51335   BEAR VALLEY COMMUNITY HOSPITAL  175.33333333333334
 400079  HOSP COMUNITARIO BUEN SAMARITANO        167.25
@@ -10,4 +13,47 @@ What hospitals are models of high-quality care?  Which hospitals have the most c
 331316  COMMUNITY MEMORIAL HOSPITAL, INC        127.66666666666667
 511313  BOONE MEMORIAL HOSPITAL 125.33333333333333
 
-For further exploration, I took a look 
+For further exploration, I wanted to make sure that there were enough data points within each hospital.  For example, Falls Community could have a very small number of datapoints which could result in outlier data or inaccurate representation of consistency (after all, it's not consistent if it's just one point).  A quick look does show me that a lot of the top hospitals I was getting had less than 10 procedures:
+
+450348  FALLS COMMUNITY HOSPITAL AND CLINIC     235.58333333333334      12
+51335   BEAR VALLEY COMMUNITY HOSPITAL  175.33333333333334      3
+400079  HOSP COMUNITARIO BUEN SAMARITANO        167.25  16
+451330  MEDINA REGIONAL HOSPITAL        136.0   3
+310002  NEWARK BETH ISRAEL MEDICAL CENTER       134.81578947368422      38
+51318   REDWOOD MEMORIAL HOSPITAL       130.33333333333334      6
+400032  HOSPITAL HERMANOS MELENDEZ INC  130.21052631578948      19
+261317  MERCY HOSPITAL CASSVILLE        128.0   4
+331316  COMMUNITY MEMORIAL HOSPITAL, INC        127.66666666666667      9
+511313  BOONE MEMORIAL HOSPITAL 125.33333333333333      6
+
+
+Therefore, I only took a look at hospitals where there were at least 20 points.  This gives me a new list of best hospitals:
+
+310002  NEWARK BETH ISRAEL MEDICAL CENTER       134.81578947368422      38
+140300  PROVIDENT HOSPITAL OF CHICAGO   123.66666666666667      24
+330202  KINGS COUNTY HOSPITAL CENTER    123.1951219512195       41
+210002  UNIVERSITY OF MARYLAND MEDICAL CENTER   121.43333333333334      30
+450289  HARRIS HEALTH SYSTEM    121.15384615384616      39
+330182  ST FRANCIS HOSPITAL, ROSLYN     119.29729729729729      37
+50060   COMMUNITY REGIONAL MEDICAL CENTER       119.17948717948718      39
+140068  ROSELAND COMMUNITY HOSPITAL     117.80952380952381      21
+320001  UNM HOSPITAL    115.525 40
+330306  LUTHERAN MEDICAL CENTER 115.25641025641026      39
+
+This list makes me feel a little better that there are a decent number of procedures happening to rate consistency of the scores.  We can also see that the scores are also less outrageous than my original list, which may be indicative that there were some outlier points that were inflating the data.
+
+Another way to assess the quality of care would be to use the scoring that the Medicare assigns, which is weighted using various fields.  This score not only takes into account the clinical process, but also patient assessment of the care they received as well as outcome and efficiency of the procedure.  This is calculated by them into a total performance score that gives weight to all those assessments where as the score calculated above is based purely on the effectiveness of care.  Let's see if we see some different results.  This has already been calculated by hospital-level, so we just need to sort and see which hospital had the highest performance score:
+
+390322  BUCKS COUNTY SPECIALTY HOSPITAL 92.857142857143
+260227  BLACK RIVER COMMUNITY MEDICAL CENTER    92.800000000000
+450834  PHYSICIANS CENTRE,THE   90.476190476190
+150177  UNITY MEDICAL AND SURGICAL HOSPITAL     90.200000000000
+420102  GHS PATEWOOD MEMORIAL HOSPITAL  89.142857142857
+390327  WELLSPAN SURGERY AND REHABILITATION HOSPITAL    88.190476190476
+500148  CONFLUENCE HEALTH- WENATCHEE VALLEY HOSP & CLINICS      87.190476190476
+030120  GILBERT HOSPITAL        86.800000000000
+430090  SIOUX FALLS SPECIALTY HOSPITAL LLP      86.428571428571
+520194  ORTHOPAEDIC HOSPITAL OF WISCONSIN       85.714285714286
+
+Looks like there isn't much overlap.  This is to be expected as these scores are calculated in very different ways and the weighting of the Medicare value score takes other factors into account.  I believe my filtered list based on the effective care score is the best representation of the actual consistency of the actual care provided by the hospitals.
+

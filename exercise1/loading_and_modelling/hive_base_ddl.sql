@@ -117,7 +117,7 @@ drop table surveys;
 
 create external table surveys
 (
-providername string,
+providerid string,
 hospname string,
 address string,
 city string,
