@@ -1,0 +1,9 @@
+1.  How many rows are missing a value in the "State" column?  Explain how you came up with the number.
+
+There are 5377 rows that do not have a value in the "State" column.  If you look at the text facet for the "State" column, it will show you 62 states.  If you scroll to the bottom of that, it will also list the number rows that are blank.
+
+2.  How many rows with missing ZIP codes do you have?
+
+There are 4362 rows with missing value in the zip code column.  Some of the zip codes also look questionable as it is only 1 number when we are expecting 5.
+
+3.  If you consider all ZIP codes less than 99999 to be valid, how many valid and invalid ZIP codes do you have, respectively.
